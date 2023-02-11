@@ -126,6 +126,9 @@ class DrumKit {
     }
   }
 }
+
+const drumKit = new DrumKit();
+
 //Event Listeners
 
 drumKit.pads.forEach((pad) => {
