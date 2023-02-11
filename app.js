@@ -41,3 +41,73 @@ class DrumKit {
         });
         this.index++;
       }
+      start() {
+        const interval = (60 / this.bpm) * 1000;
+        //Check if it's playing
+    
+        if (this.isPlaying) {
+          //Clear the interval
+          clearInterval(this.isPlaying);
+          console.log(this.isPlaying);
+          this.isPlaying = null;
+        } else {
+          this.isPlaying = setInterval(() => {
+            this.repeat();
+          }, interval);
+        }
+      }
+      updateBtn() {
+        //NULL
+    
+        if (!this.isPlaying) {
+          this.playBtn.innerText = "Stop";
+          this.playBtn.classList.add("active");
+        } else {
+          this.playBtn.innerText = "Play";
+          this.playBtn.classList.remove("active");
+        }
+      }
+      changeSound(e) {
+        const selectionName = e.target.name;
+        const selectionValue = e.target.value;
+        switch (selectionName) {
+          case "kick-select":
+            this.kickAudio.src = selectionValue;
+            break;
+          case "snare-select":
+            this.snareAudio.src = selectionValue;
+            break;
+          case "hihat-select":
+            this.hihatAudio.src = selectionValue;
+            break;
+        }
+      }
+      mute(e) {
+        const muteIndex = e.target.getAttribute("data-track");
+        e.target.classList.toggle("active");
+        if (e.target.classList.contains("active")) {
+          switch (muteIndex) {
+            case "0":
+              this.kickAudio.volume = 0;
+              break;
+            case "1":
+              this.snareAudio.volume = 0;
+              break;
+            case "2":
+              this.hihatAudio.volume = 0;
+              break;
+          }
+        } else {
+          switch (muteIndex) {
+            case "0":
+              this.kickAudio.volume = 1;
+              break;
+            case "1":
+              this.snareAudio.volume = 1;
+              break;
+            case "2":
+              this.hihatAudio.volume = 1;
+              break;
+          }
+        }
+      }
