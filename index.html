@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
     <link rel="stylesheet" href="./style.css" />
     <title>Beatmaker</title>
   </head>
@@ -20,18 +16,12 @@
             <i class="fas fa-volume-mute"></i>
           </button>
           <select name="kick-select" id="kick-select">
-            <option value="./sounds/kick-808.wave">808 Kick</option>
-            <option value="./sounds/kick-acoustic01.wav">
-              Acoustic Kick 1
-            </option>
-            <option value="./sounds/kick-acoustic02.wav">
-              Acoustic Kick 2
-            </option>
+            <option value="./sounds/kick-808.wav">808 Kick</option>
+            <option value="./sounds/kick-acou01.wav">Acoustic Kick 1</option>
+            <option value="./sounds/kick-acou02.wav">Acoustic Kick 2</option>
             <option value="./sounds/kick-big.wav">Big Kick</option>
             <option value="./sounds/kick-classic.wav">Classic Kick</option>
-            <option value="./sounds/kick-cultivator.wav">
-              Cultivator Kick
-            </option>
+            <option value="./sounds/kick-cult.wav">Cultivator Kick</option>
             <option value="./sounds/kick-deep.wav">Deep Kick</option>
             <option value="./sounds/kick-dry.wav">Dry Kick</option>
             <option value="./sounds/kick-electro01.wav">Electro Kick 1</option>
@@ -47,7 +37,7 @@
             <option value="./sounds/kick-stomp.wav">Stomp Kick</option>
             <option value="./sounds/kick-tape.wav">Tape Kick</option>
             <option value="./sounds/kick-thump.wav">ThumpKick</option>
-            <option value="./sounds/kick-tight.wave">Tight Kick</option>
+            <option value="./sounds/kick-tight.wav">Tight Kick</option>
             <option value="./sounds/kick-tron.wav">Tron Kick</option>
             <option value="./sounds/kick-vinyl01.wav">Vinyl Kick 1</option>
             <option value="./sounds/kick-vinyl02.wav">Vinyl Kick 2</option>
@@ -73,12 +63,8 @@
           </button>
           <select name="snare-select" id="snare-select">
             <option value="./sounds/snare-808.wave">808 Snare</option>
-            <option value="./sounds/snare-acoustic01.wav">
-              Acoustic Snare 1
-            </option>
-            <option value="./sounds/snare-acoustic02.wav">
-              Acoustic Snare 2
-            </option>
+            <option value="./sounds/snare-acou01.wav">Acoustic Snare 1</option>
+            <option value="./sounds/snare-acou02.wav">Acoustic Snare 2</option>
             <option value="./sounds/snare-analog.wav">Analog Snare</option>
             <option value="./sounds/snare-big.wav">Big Snare</option>
             <option value="./sounds/snare-block.wav">Block Snare</option>
@@ -114,7 +100,7 @@
       </div>
       <div class="hihat-track">
         <div class="controls">
-          <h1>Snare</h1>
+          <h1>HiHat</h1>
           <button data-track="2" class="mute hihat-volume">
             <i class="fas fa-volume-mute"></i>
           </button>
@@ -133,7 +119,7 @@
             <option value="./sounds/hihat-ring.wav">Ring HiHat</option>
           </select>
         </div>
-        <div class="snare">
+        <div class="hihat">
           <div class="pad hihat-pad b0"></div>
           <div class="pad hihat-pad b1"></div>
           <div class="pad hihat-pad b2"></div>
@@ -145,5 +131,24 @@
         </div>
       </div>
     </div>
+    <button class="play">Play</button>
+    <div class="tempo">
+      <input
+        type="range"
+        class="tempo-slider"
+        max="300"
+        min="20"
+        value="150"
+      />
+      <p>Tempo: <span class="tempo-nr">150</span></p>
+    </div>
+  </div>
+    <audio class="kick-sound" src="./sounds/kick-classic.wav"></audio>
+    <audio class="snare-sound" src="./sounds/snare-acou01.wav"></audio>
+    <audio class="hihat-sound" src="./sounds/hihat-acou01.wav"></audio>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js" integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
